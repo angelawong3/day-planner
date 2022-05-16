@@ -3,18 +3,17 @@ var today = moment().format("MMMM Do YYYY, h:mm a");
 $("#currentDay").text(today);
 
 // TODO: each timeblock is color coded to indicate past, present, or future
-var timeOfToday = ["9", "10", "11", "12", "13", "14", "15", "16", "17"];
 
 var updateTimeBlock = () => {
+  var timeOfToday = ["9", "10", "11", "12", "13", "14", "15", "16", "17"];
   var currentTime = moment().format("H");
-  console.log(currentTime);
-  for (var i = 0; i < timeOfToday.length; i++) {
+  for (var i = 0; timeOfToday[i] < timeOfToday.length; i++) {
     if (parseInt(timeOfToday[i]) < currentTime) {
-      $("#" + timeOfToday[i]).addClass(".past");
+      $("#" + timeOfToday[i]).addClass("past");
     } else if (parseInt(timeOfToday[i]) === currentTime) {
-      $("#" + timeOfToday[i]).addClass(".present");
+      $("#" + timeOfToday[i]).addClass("present");
     } else if (parseInt(timeOfToday[i]) > currentTime) {
-      $("#" + timeOfToday[i]).addClass(".future");
+      $("#" + timeOfToday[i]).addClass("future");
     }
   }
 };
