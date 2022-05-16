@@ -2,7 +2,7 @@
 var today = moment().format("MMMM Do YYYY, h:mm a");
 $("#currentDay").text(today);
 
-// TODO: each timeblock is color coded to indicate past, present, or future
+// each timeblock is color coded to indicate past, present, or future
 var timeOfToday = ["9", "10", "11", "12", "13", "14", "15", "16", "17"];
 
 var updateTimeBlock = () => {
